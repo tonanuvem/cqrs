@@ -37,7 +37,7 @@ services:
       - postgresdb
       
   postgresdb:
-    image: postgres:13.3
+    image: debezium/postgres:13-alpine
     environment:
       POSTGRES_PASSWORD: admin
     volumes:
