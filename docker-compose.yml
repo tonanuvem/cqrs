@@ -26,6 +26,8 @@ services:
       - "./postgres_servers.json:/pgadmin4/servers.json"
     networks:
       - postgresnet
+    restart: unless-stopped
+    depends_on: postgresdb
       
   postgresdb:
     image: postgres:13.3
@@ -44,6 +46,9 @@ services:
       - "8081:8081"
     networks:
       - mongonet
+    restart: unless-stopped
+    depends_on: mongo
+
   mongo:
     image: mongo:latest
     volumes:
@@ -55,6 +60,23 @@ services:
 
 
   # USUARIOS Microservice : exemplo MySQL
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin
+    container_name: pma
+    environment:
+      PMA_HOST: mysqldb
+      PMA_PORT: 3306
+      PMA_ARBITRARY: 1
+      PMA_USER: admin
+      PMA_PASSWORD: admin
+    restart: always
+    ports:
+      - 8082:80  
+    networks:
+      - mysqlnet
+    restart: unless-stopped
+    depends_on: mysqldb
+    
   mysqldb:
     image: mysql:5.7
     container_name: mysqldb
@@ -68,20 +90,6 @@ services:
     volumes:
       - mysqldata:/var/lib/mysql
       - "./mysql_init_database.sql:/docker-entrypoint-initdb.d/init-database.sql"
-    networks:
-      - mysqlnet
-  phpmyadmin:
-    image: phpmyadmin/phpmyadmin
-    container_name: pma
-    environment:
-      PMA_HOST: mysqldb
-      PMA_PORT: 3306
-      PMA_ARBITRARY: 1
-      PMA_USER: admin
-      PMA_PASSWORD: admin
-    restart: always
-    ports:
-      - 8082:80  
     networks:
       - mysqlnet
   
