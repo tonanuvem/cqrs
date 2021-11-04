@@ -6,7 +6,8 @@
             "Group": "Servers",
             "SSLMode": "prefer",
             "Username": "postgres",
-            "Host": "db",
+            "Password": "password",
+            "Host": "postgresdb",
             "MaintenanceDB": "postgres"
         }
     }
