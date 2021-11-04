@@ -30,7 +30,7 @@ services:
   postgresdb:
     image: postgres:13.3
     environment:
-      POSTGRES_PASSWORD: password
+      POSTGRES_PASSWORD: admin
     volumes:
       - "postgresdata:/var/lib/postgresql/data"
       - "./postgres_init_database.sh:/docker-entrypoint-initdb.d/init-database.sh"
