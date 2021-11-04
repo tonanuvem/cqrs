@@ -1,0 +1,65 @@
+version: "3"
+
+services:
+
+  # ferramenta CQRS via CDC
+  lenses:
+    image: lensesio/box
+    environment:
+      ADV_HOST: 127.0.0.1
+      EULA: "https://licenses.lenses.io/download/lensesdl?id="
+    ports:
+      - 3030:3030
+      - 9092:9092
+      
+  # exemplo Postgres
+  pgadmin:
+    image: dpage/pgadmin4:5.2
+    environment:
+      PGADMIN_DEFAULT_EMAIL: admin@fiap.com
+      PGADMIN_DEFAULT_PASSWORD: admin
+    ports:
+      - "8080:80"
+    volumes:
+      - "pgadmindata:/var/lib/pgadmin"
+      - "./servers.json:/pgadmin4/servers.json"
+    networks:
+      - postgresnet
+      
+  postgresdb:
+    image: postgres:13.3
+    environment:
+      POSTGRES_PASSWORD: password
+    volumes:
+      - "postgresdata:/var/lib/postgresql/data"
+    networks:
+      - postgresnet
+
+  # exemplo MongoDB
+  mongoexpress:
+    image: mongo-express
+    ports:
+      - "8081:8081"
+    networks:
+      - mongonet
+  mongo:
+    image: mongo:latest
+    volumes:
+      - mongodata:/data
+    deploy:
+      restart_policy:
+            condition: on-failure
+            max_attempts: 3
+    ports:
+      - "27017:27017"
+    networks:
+      - mongonet
+
+
+  # exemplo MySQL
+  
+  
+volumes:
+  pgadmindata:
+  postgresdata:
+  mongodata:
