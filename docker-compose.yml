@@ -5,6 +5,7 @@ services:
   # ferramenta CQRS via CDC
   lenses:
     image: lensesio/box
+    restart: unless-stopped
     environment:
       ADV_HOST: PUBLIC_IP
       EULA: LICENSE
