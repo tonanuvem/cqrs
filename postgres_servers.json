@@ -6,7 +6,7 @@
             "Group": "Servers",
             "SSLMode": "prefer",
             "Username": "postgres",
-            "Password": "password",
+            "Password": "admin",
             "Host": "postgresdb",
             "MaintenanceDB": "postgres"
         }
