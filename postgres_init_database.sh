@@ -13,7 +13,7 @@ psql -v ON_ERROR_STOP=1 --username "$POSTGRES_USER" --dbname "$POSTGRES_DB" <<-E
     "price" int,
     "quantity" int,
     "status" products_status,
-    "created_at" datetime DEFAULT (now())
+    "created_at" TIMESTAMPTZ DEFAULT Now()
   );
   CREATE INDEX "product_status" ON "products" ("status");
   CREATE UNIQUE INDEX ON "products" ("id");
