@@ -5,6 +5,10 @@ Get the free license:
 
 > https://lenses.io/downloads/lenses/?path=docs-box
 
+Diagrama:
+
+> https://dbdiagram.io/d/6183dfe4d5d522682df8aea9
+
 Links:
 
 > https://lenses.io/blog/2021/04/change-data-capture-apache-kafka-break-up-monolith/#heading5
