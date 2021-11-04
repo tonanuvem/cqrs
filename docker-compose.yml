@@ -67,7 +67,7 @@ services:
       - "3306:3306"
     volumes:
       - mysqldata:/var/lib/mysql
-      - "./mysql_init.sql:/docker-entrypoint-initdb.d/init-database.sql"
+      - "./mysql_init_database.sql:/docker-entrypoint-initdb.d/init-database.sql"
     networks:
       - mysqlnet
   phpmyadmin:
