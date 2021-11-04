@@ -9,3 +9,4 @@ Links:
 
 > https://lenses.io/blog/2021/04/change-data-capture-apache-kafka-break-up-monolith/#heading5
 > https://docs.lenses.io/4.3/tools/box/
+> https://debezium.io/documentation/reference/tutorial.html
