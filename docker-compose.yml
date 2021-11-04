@@ -6,8 +6,8 @@ services:
   lenses:
     image: lensesio/box
     environment:
-      ADV_HOST: 127.0.0.1
-      EULA: "https://licenses.lenses.io/download/lensesdl?id="
+      ADV_HOST: PUBLIC_IP
+      EULA: LICENSE
     ports:
       - 3030:3030
       - 9092:9092
