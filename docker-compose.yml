@@ -66,7 +66,6 @@ services:
   # USUARIOS Microservice : exemplo MySQL
   phpmyadmin:
     image: phpmyadmin/phpmyadmin
-    container_name: pma
     environment:
       PMA_HOST: mysqldb
       PMA_PORT: 3306
@@ -84,7 +83,6 @@ services:
     
   mysqldb:
     image: mysql:5.7
-    container_name: mysqldb
     environment:
       MYSQL_ROOT_PASSWORD: admin
       MYSQL_DATABASE: usuarios
