@@ -62,6 +62,6 @@ volumes:
   postgresdata:
   mongodata:
 
-network:
+networks:
   postgresnet:
   mongonet:
