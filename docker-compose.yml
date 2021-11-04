@@ -24,6 +24,7 @@ services:
     volumes:
       - "pgadmindata:/var/lib/pgadmin"
       - "./postgres_servers.json:/pgadmin4/servers.json"
+      - "./postgres_init_database.sh:/docker-entrypoint-initdb.d/init-database.sh"
     networks:
       - postgresnet
       
