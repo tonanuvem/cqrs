@@ -3,7 +3,7 @@
 
 EULA=$(cat lensesid.txt)
 
-sed -i 's|LICENSE|'$EULA'|' docker-compose.yml
+sed -i 's|LENSESID|'$EULA'|' docker-compose.yml
 
 #IP=$(curl checkip.amazonaws.com) 
 
