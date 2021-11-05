@@ -96,9 +96,18 @@ services:
       - mysqldata:/var/lib/mysql
       - "./mysql_init_database.sql:/docker-entrypoint-initdb.d/init-database.sql"
 
+  # Delivery (Logistica) Microservice : exemplo Redis
+  redis:
+    image: redis
+    container_name: redis
+    ports:
+      - 6379:6379
+    volumes:
+      - redisdata:/data
   
 volumes:
   pgadmindata:
   postgresdata:
   mongodata:
   mysqldata:
+  redisdata:
