@@ -109,17 +109,25 @@ services:
       - mongo
 
   mongo:
-    #image: mongo:latest
-    image: debezium/example-mongodb
-    #environment:
-    #  MONGO_INITDB_DATABASE: pedidos
-    #  MONGO_REPLICA_SET_NAME: rs0
+    image: mongo:latest
+    #image: debezium/example-mongodb #TODO: configurar replicaset
+    environment:
+      PUID: 1000
+      PGID: 1000
+      MONGO_INITDB_ROOT_USERNAME: mongo
+      MONGO_INITDB_ROOT_PASSWORD: mongo
+      MONGO_INITDB_DATABASE: pedidos
+      MONGO_REPLICA_SET_NAME: rs0
     volumes:
       - mongodata:/data
       - "../mongo_order.json:/data/mongo_order.json"
     ports:
       - "27017:27017"
-    #command: "mongod --replSet rs0"
+    healthcheck:
+      test: test $$(echo "rs.initiate().ok || rs.status().ok" | mongo -u $${MONGO_INITDB_ROOT_USERNAME} -p $${MONGO_INITDB_ROOT_PASSWORD} --quiet) -eq 1
+      interval: 10s
+      start_period: 30s
+    command: "mongod --replSet rs0"
 
   # USUARIOS Microservice : exemplo MySQL
   phpmyadmin:
