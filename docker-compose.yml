@@ -15,6 +15,7 @@ services:
       - 3030:3030
       - 9092:9092
 
+  # ferramenta visualização Kafka
   kowl:
     image: quay.io/cloudhut/kowl:v1.2.2
     restart: on-failure
