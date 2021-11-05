@@ -17,6 +17,8 @@ Links:
 <br> <br>
 > https://debezium.io/documentation/reference/tutorial.html
 <br> <br>
+> https://debezium.io/documentation/reference/1.5/connectors/index.html
+<br> <br>
 > https://blog.christianposta.com/microservices/the-hardest-part-about-microservices-data/
 <br> <br>
 > https://www.tiagotartari.net/estrangulamento-de-legado-na-pratica-com-codigo-criando-uma-um-servico-de-alta-performance/
