@@ -24,3 +24,5 @@ Links:
 > https://www.tiagotartari.net/estrangulamento-de-legado-na-pratica-com-codigo-criando-uma-um-servico-de-alta-performance/
 <br> <br>
 > https://help.lenses.io/guides/
+<br> <br>
+> https://thedataengineer.com.br/2021/05/09/nifi-consumo-dados-rest/
