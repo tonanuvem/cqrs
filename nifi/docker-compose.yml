@@ -103,6 +103,7 @@ services:
     image: mongo:latest
     volumes:
       - mongodata:/data
+      - "../mongo_order.json:/data/mongo_order.json"
     ports:
       - "27017:27017"
 
