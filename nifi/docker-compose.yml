@@ -108,7 +108,7 @@ services:
       - "../mongo_order.json:/data/mongo_order.json"
     ports:
       - "27017:27017"
-    command: "--bind_ip_all --replSet rs0"
+    command: "mongod --replSet rs0 --auth"
 
   # USUARIOS Microservice : exemplo MySQL
   phpmyadmin:
