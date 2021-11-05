@@ -90,7 +90,7 @@ services:
       - "postgresdata:/var/lib/postgresql/data"
       - "../postgres_init_database.sh:/docker-entrypoint-initdb.d/init-database.sh"
 
-  # PAGAMENTO Microservice : exemplo MongoDB
+  # PAGAMENTO e PEDIDO Microservice : exemplo MongoDB : rodando 2 juntos só para facilitar o LAB
   mongoexpress:
     image: mongo-express
     ports:
@@ -101,6 +101,9 @@ services:
 
   mongo:
     image: mongo:latest
+    environment:
+      MONGO_INITDB_DATABASE=pedidos
+      MONGO_REPLICA_SET_NAME=rs0
     volumes:
       - mongodata:/data
       - "../mongo_order.json:/data/mongo_order.json"
