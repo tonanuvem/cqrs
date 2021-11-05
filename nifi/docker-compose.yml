@@ -64,7 +64,7 @@ services:
     - ./kowl_config.yaml:/etc/kowl/config.yaml
     entrypoint: ./kowl --config.filepath=/etc/kowl/config.yaml
     depends_on:
-      - lenses
+      - kafka
 
   # PRODUTOS Microservice : exemplo Postgres
   pgadmin:
