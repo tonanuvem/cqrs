@@ -97,9 +97,18 @@ services:
       - "./mysql_init_database.sql:/docker-entrypoint-initdb.d/init-database.sql"
 
   # Delivery (Logistica) Microservice : exemplo Redis
+  redis-commander:
+    image: rediscommander/redis-commander:latest
+    restart: unless-stopped
+    environment:
+    - REDIS_HOSTS=local:redis:6379
+    ports:
+    - "8083:8081"
+    depends_on: 
+      - redis
+
   redis:
     image: redis
-    container_name: redis
     ports:
       - 6379:6379
     volumes:
