@@ -5,6 +5,7 @@ services:
   # ferramenta CQRS via CDC
   lenses:
     image: lensesio/box
+    # image: landoop/kafka-lenses-dev
     restart: unless-stopped
     environment:
       # ADV_HOST: PUBLIC_IP
