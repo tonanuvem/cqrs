@@ -112,10 +112,10 @@ services:
     image: mongo:latest
     #image: debezium/example-mongodb #TODO: configurar replicaset
     environment:
-      PUID: 1000
-      PGID: 1000
-      MONGO_INITDB_ROOT_USERNAME: mongo
-      MONGO_INITDB_ROOT_PASSWORD: mongo
+      #PUID: 1000
+      #PGID: 1000
+      #MONGO_INITDB_ROOT_USERNAME: mongo
+      #MONGO_INITDB_ROOT_PASSWORD: mongo
       MONGO_INITDB_DATABASE: pedidos
       MONGO_REPLICA_SET_NAME: rs0
     volumes:
