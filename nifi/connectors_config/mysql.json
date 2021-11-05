@@ -1,12 +1,12 @@
 {
-    "name": "usuarios-mysql-connector", 
+    "name": "usuarios2-mysql-connector", 
     "config": {
         "connector.class": "io.debezium.connector.mysql.MySqlConnector", 
         "database.hostname": "mysqldb", 
         "database.port": "3306", 
-        "database.user": "admin", 
+        "database.user": "root", 
         "database.password": "admin", 
-        "database.server.id": "184054",
+        "database.server.id": "223344",
         "database.server.name": "mysqldb", 
         "database.include.list": "usuarios", 
         "database.history.kafka.bootstrap.servers": "kafka:9092", 
