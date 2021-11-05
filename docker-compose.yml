@@ -13,7 +13,19 @@ services:
     ports:
       - 3030:3030
       - 9092:9092
-      
+
+  kowl:
+    image: quay.io/cloudhut/kowl:v1.2.2
+    restart: on-failure
+    hostname: kowl
+    ports:
+    - "8070:8080"
+    volumes:
+    - ./kowl_config.yaml:/etc/kowl/config.yaml
+    entrypoint: ./kowl --config.filepath=/etc/kowl/config.yaml
+    depends_on:
+      - lenses
+
   # PRODUTOS Microservice : exemplo Postgres
   pgadmin:
     image: dpage/pgadmin4
