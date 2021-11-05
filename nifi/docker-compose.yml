@@ -102,6 +102,7 @@ services:
   mongo:
     image: mongo:latest
     environment:
+      MONGO_INITDB_DATABASE: pedidos
       MONGO_REPLICA_SET_NAME: rs0
     volumes:
       - mongodata:/data
