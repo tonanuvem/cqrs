@@ -37,6 +37,7 @@ services:
       - zookeeper
     restart: always      
   
+  # Ferramenta CDC (Change Data Capture)
   connect:
     image: "debezium/connect"
     environment:
@@ -44,9 +45,9 @@ services:
       REST_ADVERTISED_HOST_NAME: "connect"
       BOOTSTRAP_SERVERS: "kafka:9092"
       ZOOKEEPER_CONNECT: "zookeeper:2181"
-      CONFIG_STORAGE_TOPIC: "my_connect_configs"
-      OFFSET_STORAGE_TOPIC: "my_connect_offsets" 
-      STATUS_STORAGE_TOPIC: "my_connect_statuses"
+      CONFIG_STORAGE_TOPIC: "cdc_connect_configs"
+      OFFSET_STORAGE_TOPIC: "cdc_connect_offsets" 
+      STATUS_STORAGE_TOPIC: "cdc_connect_statuses"
     ports:
       - "8073:8083"
     depends_on:
