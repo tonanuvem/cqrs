@@ -2,7 +2,7 @@
   "name": "order-mongo-connector", 
   "config": {
     "connector.class": "io.debezium.connector.mongodb.MongoDbConnector", 
-    "mongodb.hosts": "mongo:27017", 
+    "mongodb.hosts": "rs0/mongo:27017", 
     "mongodb.name": "pedidos", 
     "collection.include.list": "order[.]*" 
   }
