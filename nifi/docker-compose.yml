@@ -134,7 +134,7 @@ services:
     volumes:
       - mysqldata:/var/lib/mysql
       - "../mysql_init_database.sql:/docker-entrypoint-initdb.d/init-database.sql"
-    entrypoint: mysqld --datadir=/var/lib/mysql --user=mysql --server-id=1 --log-bin=/var/lib/mysql/mysql-bin.log --binlog-do-db=usuarios
+      - "../mysql.cnf:/etc/mysql/conf.d/mysql.cnf"
 
   # Delivery (Logistica) Microservice : exemplo Redis
   redis-commander:
