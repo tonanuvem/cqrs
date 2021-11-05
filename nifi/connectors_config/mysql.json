@@ -7,7 +7,7 @@
         "database.user": "admin", 
         "database.password": "admin", 
         "database.server.name": "mysqldb", 
-        "database.include.list": "usuarios", 
+        "database.include.list": "users", 
         "database.history.kafka.bootstrap.servers": "kafka:9092", 
         "database.history.kafka.topic": "mysqldb.usuarios", 
         "include.schema.changes": "true" 
