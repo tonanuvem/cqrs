@@ -107,16 +107,17 @@ services:
       - mongo
 
   mongo:
-    image: mongo:latest
-    environment:
-      MONGO_INITDB_DATABASE: pedidos
-      MONGO_REPLICA_SET_NAME: rs0
+    #image: mongo:latest
+    image: debezium/example-mongodb
+    #environment:
+    #  MONGO_INITDB_DATABASE: pedidos
+    #  MONGO_REPLICA_SET_NAME: rs0
     volumes:
       - mongodata:/data
       - "../mongo_order.json:/data/mongo_order.json"
     ports:
       - "27017:27017"
-    command: "mongod --replSet rs0"
+    #command: "mongod --replSet rs0"
 
   # USUARIOS Microservice : exemplo MySQL
   phpmyadmin:
