@@ -21,6 +21,8 @@ Links:
 <br> <br>
 > https://github.com/debezium/docker-images/blob/main/examples/mysql/1.8/Dockerfile
 <br> <br>
+> https://github.com/debezium/debezium-ui/blob/main/docker-compose.yml
+<br> <br>
 > https://blog.christianposta.com/microservices/the-hardest-part-about-microservices-data/
 <br> <br>
 > https://www.tiagotartari.net/estrangulamento-de-legado-na-pratica-com-codigo-criando-uma-um-servico-de-alta-performance/
