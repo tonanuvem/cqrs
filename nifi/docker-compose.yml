@@ -54,6 +54,13 @@ services:
       - zookeeper
       - kafka
 
+  debeziumui:
+    image: "debezium/debezium-ui"
+    environment:
+      KAFKA_CONNECT_URI: "connect:8073"
+    depends_on:
+      - connect     
+
   # ferramenta visualização Kafka
   kowl:
     image: quay.io/cloudhut/kowl:v1.2.2
