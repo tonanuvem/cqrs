@@ -20,3 +20,5 @@ Links:
 > https://blog.christianposta.com/microservices/the-hardest-part-about-microservices-data/
 <br> <br>
 > https://www.tiagotartari.net/estrangulamento-de-legado-na-pratica-com-codigo-criando-uma-um-servico-de-alta-performance/
+<br> <br>
+> https://help.lenses.io/guides/
