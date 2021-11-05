@@ -6,5 +6,5 @@ echo "Debezium CDC is up"
 #echo $HOST_IP
 
 curl -s -X POST http://localhost:8073/connectors \
-  -d @config_connectors/postgres.json
+  -d @connectors_config/postgres.json
   | python -mjson.tool
