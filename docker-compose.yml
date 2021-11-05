@@ -8,9 +8,9 @@ services:
     # image: landoop/kafka-lenses-dev
     restart: unless-stopped
     environment:
-      # ADV_HOST: PUBLIC_IP
-      ADV_HOST: 127.0.0.1
-      EULA: LICENSE
+      ADV_HOST: lenses
+      # ADV_HOST: 127.0.0.1
+      EULA: "https://licenses.lenses.io/download/lensesdl?id=LENSESID"
     ports:
       - 3030:3030
       - 9092:9092
