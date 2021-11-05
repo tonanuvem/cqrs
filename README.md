@@ -32,3 +32,5 @@ Links:
 > https://thedataengineer.com.br/2021/05/09/nifi-consumo-dados-rest/
 <br> <br>
 > https://github.com/WoodyFleurant/nifi-poc
+<br> <br>
+> https://github.com/jfrazee/awesome-nifi
