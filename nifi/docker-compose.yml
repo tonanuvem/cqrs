@@ -9,6 +9,7 @@ services:
       NIFI_WEB_HTTP_PORT: 8080   
     ports: 
       - "8090:8080"
+      - "8010:8010"
     volumes:
       - ./templates/:/opt/nifi/conf/templates/
     restart: always 
