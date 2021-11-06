@@ -35,4 +35,6 @@ Links:
 <br> <br>
 > https://github.com/jfrazee/awesome-nifi
 <br> <br>
+> https://capgemini.github.io/development/introduction-nifi-best-practices/
+<br> <br>
 > https://nifi.apache.org/docs/nifi-docs/html/expression-language-guide.html
