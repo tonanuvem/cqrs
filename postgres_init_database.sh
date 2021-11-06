@@ -18,7 +18,7 @@ psql -v ON_ERROR_STOP=1 --username "$POSTGRES_USER" --dbname "$POSTGRES_DB" <<-E
   CREATE INDEX "product_status" ON "products" ("status");
   CREATE UNIQUE INDEX ON "products" ("id");
   
-  INSERT INTO products (name_description,price,quantity,status) VALUES ('Camisa branda tipo polo', 69, 5, 'in_stock');
+  INSERT INTO products (name_description,price,quantity,status) VALUES ('Camisa branca tipo polo', 69, 5, 'in_stock');
   INSERT INTO products (name_description,price,quantity,status) VALUES ('Bermuda preta sem bolso', 29, 5, 'in_stock');
   INSERT INTO products (name_description,price,quantity,status) VALUES ('Meia preta do tipo social', 19, 5, 'in_stock');  
 EOSQL
