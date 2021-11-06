@@ -34,3 +34,5 @@ Links:
 > https://github.com/WoodyFleurant/nifi-poc
 <br> <br>
 > https://github.com/jfrazee/awesome-nifi
+<br> <br>
+> https://nifi.apache.org/docs/nifi-docs/html/expression-language-guide.html
