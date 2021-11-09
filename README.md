@@ -11,6 +11,8 @@ Diagrama:
 
 Links:
 
+> https://www.infoq.com/articles/saga-orchestration-outbox/
+<br> <br>
 > https://lenses.io/blog/2021/04/change-data-capture-apache-kafka-break-up-monolith/#heading5
 <br> <br>
 > https://docs.lenses.io/4.3/tools/box/
