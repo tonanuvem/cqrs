@@ -236,3 +236,4 @@ volumes:
   mongodata:
   mysqldata:
   redisdata:
+  esdata:
