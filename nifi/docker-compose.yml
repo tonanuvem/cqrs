@@ -11,8 +11,23 @@ services:
       - "8090:8080"
       - "8010:8010"
     volumes:
-      - ./templates/:/opt/nifi/conf/templates/
+      - ./templates/:/opt/nifi/nifi-current/conf/templates/
     restart: always 
+
+  producer_nifi:
+    image: producer_nifi
+    container_name: producer_pedido
+    ports:
+    - "5001:5001"
+    restart: always
+    environment:
+      - "HOST=kafka"
+      - "PORTA=9092"
+      - "TOPICO=NOVO_PEDIDO"
+      - "WEBHOOK=inserir_webhook"
+      - "CANAL=lab-testes"
+    depends_on:
+      - kafka
 
   zookeeper:
     image: "confluentinc/cp-zookeeper"
@@ -178,6 +193,43 @@ services:
     volumes:
       - redisdata:/data  
 
+  # Reporting Microservice: relatórios usando o Elastic
+  elasticsearch:
+    image: elasticsearch:7.12.1
+    container_name: elasticsearch
+    environment:
+      - "http.host=0.0.0.0"
+      - "transport.host=127.0.0.1"
+      - "ES_JAVA_OPTS=-Xmx256m -Xms256m"
+      - "ELASTIC_PASSWORD=changeme"
+    volumes:
+      - esdata:/usr/share/elasticsearch/data
+      - ./files:/usr/share/elasticsearch/files
+
+  kibana:
+    image: kibana:7.12.1
+    container_name: kibana
+    ports:
+      - 5601:5601
+
+    depends_on:
+      - elasticsearch
+
+  beats:
+    image: docker.elastic.co/beats/metricbeat:7.12.1
+    command: metricbeat -e -system.hostfs=/hostfs -strict.perms=false
+    container_name: beats
+    user: root
+    volumes:
+      - ./metricbeat.docker.yml:/usr/share/metricbeat/metricbeat.yml
+      - /proc:/hostfs/proc:ro
+      - /sys/fs/cgroup:/hostfs/sys/fs/cgroup:ro
+      - /:/hostfs:ro
+      - /var/run/docker.sock:/var/run/docker.sock
+    depends_on:
+      - elasticsearch
+      - kibana
+      
 volumes:
   pgadmindata:
   postgresdata:
