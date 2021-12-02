@@ -21,7 +21,7 @@ IP=$(curl -s checkip.amazonaws.com)
 echo ""
 echo "URLs do projeto:"
 echo ""
-echo " - NIFI            : $IP:8090"
+echo " - NIFI            : $IP:8090/nifi"
 echo " - PRODUCER        : $IP:5001"
 echo " - KAFKA UI        : $IP:8070"
 echo " - Debezium UI     : $IP:8074"
