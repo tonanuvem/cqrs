@@ -15,6 +15,7 @@ while [ "$(docker logs nifi_connect_1 2>&1 | grep "Finished starting connectors 
   sleep 1
 done
 echo ""
+sh mongo_import_order_database.sh 
 sh config_cdc.sh
 echo "Config OK"
 IP=$(curl -s checkip.amazonaws.com)
